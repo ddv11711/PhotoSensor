@@ -19,7 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ps2000aCon.c" />
+    <ClCompile Include="ps2000aCon.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="stream.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D37FFEA4-B861-4973-AB6C-2D2E0DE554D6}</ProjectGuid>

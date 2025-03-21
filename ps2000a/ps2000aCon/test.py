@@ -6,7 +6,7 @@ file_path = 'stream.txt'
 data = pd.read_csv(file_path, skiprows=1, delimiter=',')
 
 # Предположим, что значения находятся во втором столбце (индекс 1)
-values = data.iloc[:, 1]
+values = data.iloc[:, 3]
 
 # Даунсэмплинг: оставляем каждую 100-ую точку (можно изменить)
 downsampled_values = values[::100]

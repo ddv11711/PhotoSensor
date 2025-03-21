@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\User\Desktop\ps2000a\x64\Debug\ps2000aCon.exe</FullPath>
+      <FullPath>C:\github\PhotoSensor\ps2000a\x64\Debug\ps2000aCon.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
