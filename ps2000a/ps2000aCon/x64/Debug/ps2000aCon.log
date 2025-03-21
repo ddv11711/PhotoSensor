@@ -1,0 +1,13 @@
+﻿  ps2000aCon.c
+C:\Users\User\Desktop\ps2000a\ps2000aCon\ps2000aCon.c(680,19): warning C4477: "fprintf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "1" имеет тип "int64_t"
+      C:\Users\User\Desktop\ps2000a\ps2000aCon\ps2000aCon.c(680,19):
+      рекомендуется использовать "%lld" в строке форматирования
+      C:\Users\User\Desktop\ps2000a\ps2000aCon\ps2000aCon.c(680,19):
+      рекомендуется использовать "%Id" в строке форматирования
+      C:\Users\User\Desktop\ps2000a\ps2000aCon\ps2000aCon.c(680,19):
+      рекомендуется использовать "%I64d" в строке форматирования
+  
+C:\Users\User\Desktop\ps2000a\ps2000aCon\ps2000aCon.c(1618,53): warning C4996: 'strcmpi': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strcmpi. See online help for details.
+C:\Users\User\Desktop\ps2000a\ps2000aCon\ps2000aCon.c(2462,9): warning C4101: ch: неиспользованная локальная переменная
+ps2000aCon.obj : warning LNK4075: не учитывается "/EDITANDCONTINUE" из-за спецификации "/INCREMENTAL:NO"
+  ps2000aCon.vcxproj -> C:\Users\User\Desktop\ps2000a\x64\Debug\ps2000aCon.exe
