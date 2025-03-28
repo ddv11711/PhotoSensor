@@ -63,7 +63,7 @@
  * Copyright (C) 2011-2018 Pico Technology Ltd. See LICENSE file for terms.
  *
  ******************************************************************************/
-
+#pragma once
 #include <stdio.h>
 #include "windows.h"
 #include <conio.h>
@@ -503,7 +503,7 @@ PICO_STATUS ClearDataBuffers(UNIT * unit)
 * - текст: текст, отображаемый перед отображением фрагмента данных
 * - смещение: смещение в буфер данных для начала отображения фрагмента.
 ****************************************************************************/
-void BlockDataHandler(UNIT * unit, char * text, int32_t offset, MODE mode, int16_t etsModeSet)
+void BlockDataHandler(UNIT * unit, const char * text, int32_t offset, MODE mode, int16_t etsModeSet)
 {
 	uint16_t bit;
 	uint16_t bitValue;
@@ -519,7 +519,7 @@ void BlockDataHandler(UNIT * unit, char * text, int32_t offset, MODE mode, int16
 	int16_t * buffers[PS2000A_MAX_CHANNEL_BUFFERS];
 	int16_t * digiBuffer[PS2000A_MAX_DIGITAL_PORTS];
 
-	int64_t * etsTime; // Буфер для данных о времени ETS
+	int64_t * etsTime=0; // Буфер для данных о времени ETS
 
 	FILE * fp = NULL;
 	FILE * digiFp = NULL;
@@ -1616,7 +1616,7 @@ void get_info(UNIT * unit)
 				// Установите первый диапазон напряжения, если устройство представляет собой 2206/7/8, 2206/7/8A или 2205 MSO
 				if (numChannels == DUAL_SCOPE)
 				{
-					if (strlen((char*)line) == 4 || (strlen((char*)line) == 5 && strcmpi((char*)&line[4], "A") == 0) || (strcmpi((char*)line, "2205MSO")) == 0)
+					if (strlen((char*)line) == 4 || (strlen((char*)line) == 5 && _strcmpi((char*)&line[4], "A") == 0) || (_strcmpi((char*)line, "2205MSO")) == 0)
 					{
 						unit->firstRange = PS2000A_50MV;
 					}
@@ -2456,9 +2456,10 @@ void DigitalMenu(UNIT *unit)
 
 /****************************************************************************
 * main
-* 
+*
 ***************************************************************************/
-int32_t main(void){
+
+int32_t main(void) {
 	SetConsoleOutputCP(CP_UTF8);
 	int8_t ch;
 
@@ -2493,7 +2494,7 @@ int32_t main(void){
 
 		printf("\n\n");
 
-		switch (ch) 
+		switch (ch)
 		{
 			case 'B':
 				CollectBlockImmediate(&unit);
